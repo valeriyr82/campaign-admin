@@ -1,0 +1,62 @@
+.overlay_recentsearch {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top:0;
+	left: 0;
+	background-color: #333;
+	opacity: 0.3;
+	filter: Alpha(Opacity=30);
+}
+
+.dlg_recentsearch {
+	position: relative;
+	width: 500px;
+	background-color: #FFF;
+	margin: 60px auto;
+	padding: 8px;
+	border-radius: 7px;
+	input {
+		margin-left: 7px;
+		margin-top: 6px;
+		margin-bottom: 0;
+		cursor: pointer;
+	}
+}
+
+.wholescreen_recentsearch { 
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top:0;
+	left: 0;
+	z-index:8888;
+}
+
+.filter-apply-link {
+	left: 630px;
+	position: absolute;
+	z-index: 7778;
+	top: 238px;
+	width: 200px;
+	height: 44px;
+	font-size: 13px;
+	padding: 19px 12px;
+	-moz-border-radius: 9px;
+	-webkit-border-radius: 9px;
+	border-radius: 10px;
+	background-color: black;
+	color: white;
+	text-shadow: none;
+	opacity: 0.75;
+	text-align: center;
+	&:hover {
+		text-decoration: none;
+		color: #fbdb42;
+	}
+	span {
+		font-size: 18px;
+		display: block;
+		margin-bottom: 14px;
+	}
+}

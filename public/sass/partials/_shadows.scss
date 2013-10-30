@@ -1,0 +1,20 @@
+ /*-------------------------------------------------------------- 
+ -----------Shadows-------11/4/12-------------MG--------------- 
+ -------------------------------------------------------------- */ 
+$shadow: #111;
+$nav-text-shadow:0 2px 5px #222;
+$body-text-shadow:0 0.063em white;
+/* Box shadow */
+ $box-shadow:$shadow 0 .25em .3em;
+/* Button box-shadow */
+@mixin box-shadow-button {
+	-webkit-box-shadow: 0 0.063em rgba(0,0,0,.68), inset 0 0.063em rgba(255,255,255,.77);
+	-moz-box-shadow: 0 0.063em rgba(0,0,0,.68), inset 0 0.063em rgba(255,255,255,.77);
+	box-shadow: 0 0.063em rgba(0,0,0,.68), inset 0 0.063em rgba(255,255,255,.77);
+}
+/* Login button is a litle different for the shadow:*/
+@mixin box-shadow-login-button {
+	-webkit-box-shadow: 0 0.063em #2d565a, inset 0 0.063em rgba(255,255,255,.77);
+	-moz-box-shadow: 0 0.063em #2d565a, inset 0 0.063em rgba(255,255,255,.77);
+	box-shadow: 0 0.063em #2d565a, inset 0 0.063em rgba(255,255,255,.77);
+}

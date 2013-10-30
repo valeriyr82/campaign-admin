@@ -1,0 +1,334 @@
+<h3>Campaign Detail Page</h3>
+<div class="row-fluid">
+    <a href="#campaigns" class="btn btn-primary">Back to Campaign List</a>
+</div>
+<div class="row-fluid">
+        <div class="span6">
+            <h4>Campaign Details</h4>
+
+            <div class="row alert alert-success">
+                <div class="col-lg-12">
+                    <div class="title"><h5>Campaign Title : <%= campaign.title %></h5></div>
+                    <div class="content form-group">
+                        <div class="btn-group" id="id_enable">
+                            <button type="button" class="btn btn-default dropdown-toggle <% if (campaign.status == 1) { %>btn-success<% } else { %>btn-warning<% } %>" data-toggle="dropdown">
+                                <% if (campaign.status == 1) { %>Enabled<% } else { %>Disabled<% } %><span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:0;">Enabled</a></li>
+                                <li><a href="javascript:0;">Disabled</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span6 form-group">
+                            <label for="id_activates_at">Activates at (UTC):</label>
+                            <div class="input-append date activates_at">
+                                <input type="text" id="id_activates_at" name="activates_at" class="span9" value="<%= campaign.activates_at.substring(0, 16) %>" />
+                                <span class="add-on">
+                                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="span6 form-group">
+                            <label for="id_expires_at">Expires at (UTC):</label>
+                            <div class="input-append date expires_at">
+                                <input type="text" id="id_expires_at" name="expires_at" class="span9" value="<%= (campaign.expires_at == null) ? '' : campaign.expires_at.substring(0, 16) %>" />
+                                <span class="add-on">
+                                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion" id="accordion2">
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                                    Advanced
+                                </a>
+                            </div>
+                            <div id="collapseOne" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <p>
+                                        To run the campaign only at certain times of the day, select start/end times here.<br/>
+                                        (Set the time in the shops timezone, otherwise it uses the retailer timezone setting).
+                                    </p>
+                                    <div class="row-fluid">
+                                        <div class="span6 form-group">
+                                            <label for="id_start_at">Start at : </label>
+                                            <div class="input-append date start_at">
+                                                <input type="text" id="id_start_at" name="start_at" class="span9" value="<%= (campaign.start_at == null) ? '' : campaign.start_at.substring(0, 5) %>" />
+                                                <span class="add-on">
+                                                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="span6 form-group">
+                                            <label for="id_end_at">End at : </label>
+                                            <div class="input-append date end_at">
+                                                <input type="text" id="id_end_at" name="end_at" class="span9" value="<%= (campaign.end_at == null) ? '' : campaign.end_at.substring(0, 5) %>" />
+                                                <span class="add-on">
+                                                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        You can run the campaign everyday or just on selected days.<br/>
+                                        If no day is selected, all days are considered to be selected.
+                                    </p>
+                                    <div class="form-group weekdays_group">
+                                        <label class="checkbox inline">
+                                            <input type="checkbox" id="id_weekdays_0" value="0" <% if (campaign.weekdays && campaign.weekdays.indexOf('0') >= 0){print('checked');}%> >Monday
+                                        </label>
+                                        <label class="checkbox inline">
+                                            <input type="checkbox" id="id_weekdays_1" value="1" <% if (campaign.weekdays && campaign.weekdays.indexOf('1') >= 0){print('checked');}%> >Tuesday
+                                        </label>
+                                        <label class="checkbox inline">
+                                            <input type="checkbox" id="id_weekdays_2" value="2" <% if (campaign.weekdays && campaign.weekdays.indexOf('2') >= 0){print('checked');}%> >Wednesday
+                                        </label>
+                                        <label class="checkbox inline">
+                                            <input type="checkbox" id="id_weekdays_3" value="3" <% if (campaign.weekdays && campaign.weekdays.indexOf('3') >= 0){print('checked');}%> >Thursday
+                                        </label>
+                                        <label class="checkbox inline">
+                                            <input type="checkbox" id="id_weekdays_4" value="4" <% if (campaign.weekdays && campaign.weekdays.indexOf('4') >= 0){print('checked');}%> >Friday
+                                        </label>
+                                        <label class="checkbox inline">
+                                            <input type="checkbox" id="id_weekdays_5" value="5" <% if (campaign.weekdays && campaign.weekdays.indexOf('5') >= 0){print('checked');}%> >Saturday
+                                        </label>
+                                        <label class="checkbox inline">
+                                            <input type="checkbox" id="id_weekdays_6" value="6" <% if (campaign.weekdays && campaign.weekdays.indexOf('6') >= 0){print('checked');}%> >Sunday
+                                        </label>
+                                     </div>
+                                    Campaign Earnings:
+                                    <button class="btn"><i class="glyphicon glyphicon-signal"></i>Analytics</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row alert alert-success">
+                <div class="span6 form-group">
+                    <div class="form-group">
+                        <label for="id_userlist">Userlist :</label>
+                        <select id="id_userlist" name="userlist" class="span12">
+                            <option value="" <% if(!campaign.userlist){print('selected="selected"');} %>>---------</option>
+                            <%
+                            _.each( users, function( user ){
+                                if(campaign.userlist && campaign.userlist.suid==user.suid) {
+                                    print('<option value="' + user.suid +'" selected="selected">' + user.name + '</option>');
+                                } else {
+                                    print('<option value="' + user.suid +'">' + user.name + '</option>');
+                                }
+                            });
+                            %>
+                        </select>
+                    </div>
+                    <div id="campaign_user_mode" class="fade <% if(campaign.userlist && (campaign.userlist.suid=='UKO0F57ON9OA' || campaign.userlist.suid=='RR3BJOUGD9BX')){print('out');} else {print('in');} %>">
+                        <div class="form-group">
+                            <label for="id_target_gender">Target Gender :</label>
+                            <select id="id_target_gender" name="target_gender" class="span12">
+                                <option value="0" <% if(!(campaign.target_gender == 1 || campaign.target_gender == 2)){print('selected="selected"');} %>>All App Users</option>
+                                <option value="1" <% if(campaign.target_gender == 1){print('selected="selected"');} %>>Women</option>
+                                <option value="2" <% if(campaign.target_gender == 2){print('selected="selected"');} %>>Men</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <%
+                            if (campaign.min_age == -1) {
+                                print('<label class="checkbox">');
+                                print('<input type="checkbox" id="id_min_age_chk">Min age is <span class="min_age_lbl">disabled</span>');
+                                print('</label>');
+                                print('<div class="row-fluid" style="display: none;"><input type="text" id="id_min_age_val" class="span12 hide" value="18" data-slider-min="18" data-slider-max="80" data-slider-step="1" data-slider-value="18" data-slider-orientation="horizontal" data-slider-selection="after"data-slider-tooltip="hide"></div>');
+                            } else {
+                                print('<label class="checkbox">');
+                                print('<input type="checkbox" id="id_min_age_chk" checked="checked">Min age is <span class="min_age_lbl">' + campaign.min_age + '</span>');
+                                print('</label>');
+                                print('<div class="span12"><input type="text" id="id_min_age_val" class="span12 hide" value="'+campaign.min_age+'" data-slider-min="18" data-slider-max="80" data-slider-step="1" data-slider-value="'+campaign.min_age+'" data-slider-orientation="horizontal" data-slider-selection="after"data-slider-tooltip="hide"></div>');
+                            }
+                            %>
+                        </div>
+                        <div class="form-group">
+                            <%
+                            if (campaign.max_age == -1) {
+                            print('<label class="checkbox">');
+                            print('<input type="checkbox" id="id_max_age_chk">Max age is <span class="max_age_lbl">disabled</span>');
+                            print('</label>');
+                            print('<div class="row-fluid" style="display: none;"><input type="text" id="id_max_age_val" class="span12 hide" value="18" data-slider-min="18" data-slider-max="80" data-slider-step="1" data-slider-value="18" data-slider-orientation="horizontal" data-slider-selection="after"data-slider-tooltip="hide"></div>');
+                            } else {
+                            print('<label class="checkbox">');
+                            print('<input type="checkbox" id="id_max_age_chk" checked="checked">Max age is <span class="max_age_lbl">' + campaign.max_age + '</span>');
+                            print('</label>');
+                            print('<div class="span12"><input type="text" id="id_max_age_val" class="span12 hide" value="'+campaign.max_age+'" data-slider-min="18" data-slider-max="80" data-slider-step="1" data-slider-value="'+campaign.max_age+'" data-slider-orientation="horizontal" data-slider-selection="after"data-slider-tooltip="hide"></div>');
+                            }
+                            %>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_faved_category">Faved Category</label>
+                            <input id="id_faved_category" name="faved_category" type="text" class="span12" value="<%= campaign.faved_category %>">
+                        </div>
+                        <div class="form-group">
+                            <select name="last_faved_since" id="id_last_faved_since" class="span12">
+                                <%
+                                for ( i = -1; i < 180; i = Math.max(i, 0) + 30) {
+                                    print('<option value="' + i +'">' + ((i < 0)?'Ignore':i) + '</option>');
+                                    /*if(i == campaign.priority) {
+                                        print('<option value="' + i +'" selected="selected">' + i + '</option>');
+                                    } else {
+                                        print('<option value="' + i +'">' + i + '</option>');
+                                    }*/
+                                }
+                                %>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="form-group">
+                        <label for="id_cuid">Your Campaign Reference (optional):</label>
+                        <input type="text" id="id_cuid" value="" class="span12"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_priority">Priority:</label>
+                        <select name="priority" id="id_priority" class="span12">
+                            <%
+                            for ( i = 500; i < 1500; i += 100) {
+                                if(i == campaign.priority) {
+                                    print('<option value="' + i +'" selected="selected">' + i + '</option>');
+                                } else {
+                                    print('<option value="' + i +'">' + i + '</option>');
+                                }
+                            }
+                            %>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_geofence_radius">Geofence radius:</label>
+                        <select name="geofence_radius" id="id_geofence_radius" class="span12">
+                            <%
+                                _.each( geofence_radius_list, function( geofence ){
+                                    if(geofence.value == campaign.geofence_radius) {
+                                        print('<option value="' + geofence.value +'" selected="selected">' + geofence.label + '</option>');
+                                    } else {
+                                        print('<option value="' + geofence.value +'">' + geofence.label + '</option>');
+                                    }
+                                });
+                            %>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_shops">Shops</label>
+                        <select multiple="multiple" id="id_shops" name="shops" class="span12">
+                            <%
+                            _.each( shops, function( shop ){
+                                if( campaign.shops != null && campaign.shops.indexOf(shop.suid) != -1 ) {
+                                    print('<option value="' + shop.suid +'" selected="selected">' + shop.title + '</option>');
+                                } else {
+                                    print('<option value="' + shop.suid +'">' + shop.title + '</option>');
+                                }
+                            });
+                            %>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_data">Url</label>
+                        <input id="id_data" name="data" type="text" class="span12" value="<%= campaign.data %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="id_ios_template">Push Template</label>
+                        <textarea id="id_ios_template" name="ios_template" class="span12"><%= campaign.ios_template %></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="span6">
+            <h4>Offer Details</h4>
+            <div class="row alert alert-success">
+                <div class="span6 form-group">
+                    <div class="form-group">
+                        <label for="id_offer_title">Title :</label>
+                        <input id="id_offer_title" name="offer_title" type="text" value="<%= offer.title %>" class="span12">
+                    </div>
+                    <div class="form-group">
+                        <label for="id_offer_description">Description</label>
+                        <textarea id="id_offer_description" name="offer_description" class="span12"><%= offer.description %></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_offer_url">Url</label>
+                        <input id="id_offer_url" name="offer_url" type="text" value="<%= offer.url %>" class="span12">
+                    </div>
+                    <div class="id_offer_hidden">
+                        <label for="offer_hidden_0">Hidden</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="offer_hidden" id="offer_hidden_0" value="False" <% if (offer.hidden != true) {print('checked');}%> >
+                                No
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="offer_hidden" id="offer_hidden_1" value="True" <% if (offer.hidden == true) {print('checked');}%>>
+                                Yes
+                            </label>
+                        </div>
+                        Restrict visibility to matched users
+                    </div>
+                    <div class="id_offer_hidden">
+                        <label for="offer_hidden_0">Available online</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="offer_available_online" id="id_offer_available_online_0" value="False" <% if (offer.available_online != true) {print('checked');}%>>
+                                No
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="offer_available_online" id="id_offer_available_online_1" value="True" <% if (offer.available_online == true) {print('checked');}%>>
+                                Yes
+                            </label>
+                        </div>
+                        Use "Url field in notifications for a different landing page
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="form-group">
+                        <label for="id_offer_thumbnail_url">Thumbnail url</label>
+                        <input id="id_offer_thumbnail_url" name="offer_thumbnail_url" type="text" value="<%= offer.thumbnail_url %>" class="span12">
+                    </div>
+                    <div class="form-group">
+                        <label for="id_offer_disclaimer_url">Disclaimer url</label>
+                        <input id="id_offer_disclaimer_url" name="offer_disclaimer_url" type="text" value="<%= offer.disclaimer_url %>" class="span12">
+                    </div>
+                    <div class="form-group">
+                        <label for="id_offer_offer_type">Offer type</label>
+                        <select name="offer_offer_type" id="id_offer_offer_type" class="span12">
+                            <%
+                            for ( i = -1; i < 3; i++ ) {
+                                if(i == offer.offer_type) {
+                                    print('<option value="' + i +'" selected="selected">' + i + '</option>');
+                                } else {
+                                    print('<option value="' + i +'">' + i + '</option>');
+                                }
+                            }
+                            %>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_offer_offer_value">Offer value</label>
+                        <input id="id_offer_offer_value" name="offer_offer_value" type="text" value="<%= offer.offer_value %>" class="span12">
+                    </div>
+                    <div class="form-group">
+                        Offer ID : <%= offer.id %>
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-danger update" type="button" value="Update Campaign">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

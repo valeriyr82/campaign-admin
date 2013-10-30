@@ -1,0 +1,38 @@
+caption {
+	padding: 1em;
+}
+table, th, td {
+	border: 1px solid $table-border-color;
+}
+table {
+	width: 90%;
+	margin-left: 5%;
+	margin-bottom: 1em;
+}
+td {
+	padding: 0.3em;
+	text-align: left;
+}
+th {
+	padding: 0.3em;
+	text-align: left;
+}
+thead, tfoot {
+	margin: 0;
+	text-align: center;
+	color: $box-header-color;
+	border-top: 1px solid $grey-dark;
+	border-bottom: 1px solid $grey-darkest;
+	text-shadow: $nav-text-shadow;
+	padding: 10px;
+	letter-spacing: 1px;
+	font-size: 1em;
+	font-family: $droid-sans;
+	@include gradient-background;
+}
+.alert .name {
+	vertical-align: middle;
+}
+.t10 {
+	width: 10%;
+}

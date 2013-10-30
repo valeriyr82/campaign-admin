@@ -1,0 +1,136 @@
+/* ------------------------------------------------------------------------ 
+ -----------Navigation header-------11/7/12-------------MG--------------- 
+ ------------------------------------------------------------------------ */ 
+#navbar {
+	top: 0;
+	width: 100%;
+	height: 4em;
+@include gradient-background;
+	-webkit-box-shadow: 0px 0px 0.6em rgba(0,0,0,.7);
+	-moz-box-shadow: 0px 0px 0.6em rgba(0,0,0,.7);
+	box-shadow: 0px 0px 0.6em rgba(0,0,0,.7);
+ 	text-shadow:$nav-text-shadow;
+ 	z-index: 2;
+ 	position:fixed;
+	// margin-bottom: 1.5em;
+ a, a:hover {
+ color: $nav-link-color;
+ text-decoration: none;
+}
+}
+#search-box {
+	/*min-width: 24em;*/
+	margin-left: 4em;
+	/* the logo column doesn't consume enough space  */
+	margin-top: 1.15em;
+	width: 90%;
+}
+
+.logo {
+	margin-left: 4em;
+	background-image: url(../img/cq/logo-small.png);
+	background-repeat: no-repeat;
+	background-position: left;
+	height: 4em;
+	width: 8em;
+}
+/* Multipurpose content boxes*/ 
+.box {
+	// border-radius: 0.313em;
+	 // border-top:2px solid $box-border-color;
+	 background-color:$box-background-color;
+	// margin-bottom: 1em;
+	/*keep multiple boxes in the same column from running together  */
+	min-height: 4em;
+	overflow: hidden;
+	-webkit-box-shadow: 0px 0px 0.8em rgba(0,0,0,.4);
+	-moz-box-shadow: 0px 0px 0.8em rgba(0,0,0,.4);
+	box-shadow: 0px 0px 0.8em rgba(0,0,0,.4);
+	margin-right: 0px !important;
+}
+/*box header */
+.header {
+	margin: 0;
+	text-align: center;
+	 color: $box-header-color;
+	 border-top: 1px solid $grey-dark;
+	 border-bottom: 1px solid $grey-darkest;
+	 text-shadow:$nav-text-shadow;
+	padding: 10px;
+	letter-spacing: 1px;
+	font-size: 1.2em;
+	 font-family:$droid-sans;
+	 @include gradient-background;
+}
+/* -------------------------------------------------------------- 
+ -----------Nav drop down---11/4/12------------------MG-------- 
+ --------------------------------------------------------------*/ 
+nav {
+	background: url('../img/menuIcon.png') no-repeat 0 15px;
+}
+nav ul ul {
+	margin: 0;
+ @include gradient-background;
+	width: 100%;
+	opacity: 0;
+	left: -99999px;
+	-webkit-transition: opacity .5s ease-in-out;
+	-moz-transition: opacity .5s ease-in-out;
+	-o-transition: opacity .5s ease-in-out;
+	transition: opacity .5s ease-in-out;
+}
+nav ul li:hover > ul {
+	left: 0;
+	opacity: 1;
+}
+nav ul {
+	list-style: none;
+	position: relative;
+	margin: 12px 3px 0 0;
+	z-index: 999;
+}
+nav ul:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+nav ul li {
+	float: left;
+	width: 100%;
+	padding-bottom: 0.66em;
+}
+nav ul li a {
+	display: block;
+	text-decoration: none;
+	text-indent: 1.4em;
+	padding: 13px 0;
+}
+nav ul ul {
+	position: absolute;
+	top: 100%;
+	margin: 0;
+ 	box-shadow:$box-shadow;
+	border-bottom-left-radius: 0.8em;
+	border-bottom-right-radius: 0.8em;
+}
+nav ul ul li {
+
+	float: none;
+	padding: .4em 0;
+	 border-top: 1px solid $grey-dark;
+	 border-bottom: 1px solid $grey-darkest;
+	 &:last-child {
+	border-bottom:none;
+}
+}
+nav ul ul li a {
+	font-size: 13px;
+ 	color: $a-color;
+}
+nav ul ul li:hover {
+ background:$grey-darkest;
+}
+nav ul ul li:last-child:hover {
+	border-bottom-left-radius: 0.8em;
+	border-bottom-right-radius: 0.8em;
+}

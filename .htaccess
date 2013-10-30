@@ -1,0 +1,6 @@
+RewriteEngine On
+
+#RewriteBase /api/
+
+RewriteCond %{REQUEST_URI} ^/api/.*$
+RewriteRule ^ api.php [QSA,L]

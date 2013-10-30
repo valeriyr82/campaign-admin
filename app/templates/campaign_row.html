@@ -1,0 +1,10 @@
+<tr class="result">
+    <td><input type="checkbox" id="<%=suid %>"></td>
+    <td><i class="<% if (status == 1) { print('icon-ok'); } else {print('icon-remove');} %>"></i></td>
+	<td><a href="#campaigns/<%= suid %>"><%= title %></a></td>
+    <td class="storyMeta"><%= targets %></td>
+    <td><%= created %></td>
+    <td><%= activates_at %></td>
+    <td><%= expires_at %></td>
+</tr>
+

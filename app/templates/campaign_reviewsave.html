@@ -1,0 +1,105 @@
+<h3 xmlns="http://www.w3.org/1999/html">Campaign Review & Save</h3>
+<div class="row-fluid">
+    <a href="#campaigns" class="btn btn-primary">Back to Campaign List</a>
+    <input class="btn btn-danger update pull-right" type="button" value="save">
+</div>
+<div class="col-lg-12">
+    <div class="title"><label>Campaign Title : <input type="text" class="" value=""></label></div>
+    <div class="content form-group">
+        <div class="btn-group" id="id_enable">
+            <button type="button" class="btn btn-default dropdown-toggle btn-warning" data-toggle="dropdown">
+                Disabled<span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="javascript:0;">Enabled</a></li>
+                <li><a href="javascript:0;">Disabled</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span6 form-group">
+            <label for="id_activates_at">Activates at (UTC):</label>
+            <div class="input-append date activates_at">
+                <input type="text" id="id_activates_at" name="activates_at" class="span9" value="" />
+                <span class="add-on">
+                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                </span>
+            </div>
+        </div>
+        <div class="span6 form-group">
+            <label for="id_expires_at">Expires at (UTC):</label>
+            <div class="input-append date expires_at">
+                <input type="text" id="id_expires_at" name="expires_at" class="span9" value="" />
+                <span class="add-on">
+                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="accordion" id="accordion2">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                    Advanced
+                </a>
+            </div>
+            <div id="collapseOne" class="accordion-body collapse in">
+                <div class="accordion-inner">
+                    <p>
+                        To run the campaign only at certain times of the day, select start/end times here.<br/>
+                        (Set the time in the shops timezone, otherwise it uses the retailer timezone setting).
+                    </p>
+                    <div class="row-fluid">
+                        <div class="span6 form-group">
+                            <label for="id_start_at">Start at : </label>
+                            <div class="input-append date start_at">
+                                <input type="text" id="id_start_at" name="start_at" class="span9" value="" />
+                                <span class="add-on">
+                                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="span6 form-group">
+                            <label for="id_end_at">End at : </label>
+                            <div class="input-append date end_at">
+                                <input type="text" id="id_end_at" name="end_at" class="span9" value="" />
+                                <span class="add-on">
+                                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        You can run the campaign everyday or just on selected days.<br/>
+                        If no day is selected, all days are considered to be selected.
+                    </p>
+                    <div class="form-group weekdays_group">
+                        <label class="checkbox inline">
+                            <input type="checkbox" id="id_weekdays_0" value="0" >Monday
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="checkbox" id="id_weekdays_1" value="1" >Tuesday
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="checkbox" id="id_weekdays_2" value="2" >Wednesday
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="checkbox" id="id_weekdays_3" value="3" >Thursday
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="checkbox" id="id_weekdays_4" value="4" >Friday
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="checkbox" id="id_weekdays_5" value="5" >Saturday
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="checkbox" id="id_weekdays_6" value="6" >Sunday
+                        </label>
+                    </div>
+                    Campaign Earnings:
+                    <button class="btn"><i class="glyphicon glyphicon-signal"></i>Analytics</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,116 @@
+/*all dimensions in ems relative to a 16pt font  
+-------------------------------------------------------------- 
+-----------Colors for messages-------------------------------- 
+-------------------------------------------------------------- */
+$error-red:#a82618;
+$warning-yellow: #e8e61f;
+$success-green: #0a700c;
+$info-blue:#0074b0;
+$info-gray:#555;
+/*-------------------------------------------------------------- 
+ -----------Color Name Definitions----------------------------- 
+-------------------------------------------------------------- */
+$cq-orange: #fbdb42;
+$cq-orange-dark: #d8b300;
+$grey-light: #eee;
+$grey: #ccc;
+$grey-dark: #666;
+$grey-darkest: #444;
+$off-white:#F2F1E8;
+/* -------------------------------------------------------------- 
+ -----------Color Purpose Definition--------------------------- 
+ -------------------------------------------------------------- */
+$body-background-color: $grey-light;
+$box-background-color: #eaeaea;
+$box-header-background-color: $grey-darkest;
+$box-header-color: white;
+$box-subheader-background-color: #eaeaea;
+$box-border-color: $cq-orange;
+$box-subheader-top-border-color: $cq-orange;
+$box-subheader-bottom-border-color: $grey-darkest;
+$box-subheader-color: $grey-darkest;
+$box-text-color: $grey-darkest;
+$a-color: $grey-darkest;
+/* -------------------------------------------------------------- 
+ -----------Facet---------------------------------------------- 
+ -------------------------------------------------------------- */
+$facet-selected-background-color: $cq-orange;
+$facet-selected-color: $grey-darkest;
+$facet-count-background-color: $grey-darkest;
+$facet-count-color: white;
+$grey-list-facet-color:#ddd;
+/* -------------------------------------------------------------- 
+ -----------Stories-------------------------------------------- 
+ -------------------------------------------------------------- */
+$story-border-color: $cq-orange-dark;
+$headline-color: $grey-darkest;
+$story-copy-color: $grey-darkest;
+$nav-link-color: white;
+
+$nav-gradient-start-color: $grey-dark;
+$nav-gradient-end-color: $grey-darkest;
+$nav-border-color: $grey-darkest;
+
+/* -------------------------------------------------------------- 
+ -----------Client Graident----------------------------------------- 
+ -------------------------------------------------------------- */
+$client-nav-gradient-start-color: $cq-orange-dark;
+$client-nav-gradient-end-color: $cq-orange-dark;
+
+/* -------------------------------------------------------------- 
+ -----------Buttons-------------------------------------------- 
+ -------------------------------------------------------------- */
+$button-background-color: $grey-darkest;
+$button-color: white;
+/* -------------------------------------------------------------- 
+ -----------Inputs--------------------------------------------- 
+ -------------------------------------------------------------- */
+$input-background-color: black;
+$input-color: white;
+/*
+	Tables
+ */
+$table-border-color: $grey-darkest;
+/* -------------------------------------------------------------- 
+-----------Font definitions----------------------------------- 
+ -------------------------------------------------------------- */
+/*used in headlines */
+$droid-serif: 'Open Sans', Arial, Helvetica, sans-serif;
+/* used as body copy */
+$droid-sans:"PTSerif", Georgia, serif;
+/*-------------------------------------------------------------- 
+ -----------Background graidient for reuse---MG---------------- 
+ --------------------------------------------------------------  */
+ @mixin gradient-background {
+ background-color: $nav-gradient-start-color;
+ filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF666666', endColorstr='#FF444444');
+ background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $nav-gradient-start-color), color-stop(100%, $nav-gradient-end-color));
+ background-image: -webkit-linear-gradient(top, $nav-gradient-start-color 0%, $nav-gradient-end-color 100%);
+ background-image: -moz-linear-gradient(top, $nav-gradient-start-color 0%, $nav-gradient-end-color 100%);
+ background-image: -o-linear-gradient(top, $nav-gradient-start-color 0%, $nav-gradient-end-color 100%);
+ background-image: linear-gradient(top, $nav-gradient-start-color 0%, $nav-gradient-end-color 100%);
+}
+@mixin client-gradient-background{
+background-color: $client-nav-gradient-start-color;
+ filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='$client-nav-gradient-start-color', endColorstr='$client-nav-gradient-end-color ');
+ background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $client-nav-gradient-start-color), color-stop(100%, $client-nav-gradient-end-color));
+ background-image: -webkit-linear-gradient(top, $client-nav-gradient-start-color 0%, $client-nav-gradient-end-color 100%);
+ background-image: -moz-linear-gradient(top, $client-nav-gradient-start-color 0%, $client-nav-gradient-end-color 100%);
+ background-image: -o-linear-gradient(top, $client-nav-gradient-start-color 0%, $client-nav-gradient-end-color 100%);
+ background-image: linear-gradient(top, $client-nav-gradient-start-color 0%, $client-nav-gradient-end-color 100%);
+}
+ @mixin gradient-background-hover {
+ background-color: $nav-gradient-start-color;
+ filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF666666', endColorstr='#FF444444');
+ background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, lighten($nav-gradient-start-color, 5%)), color-stop(100%, lighten($nav-gradient-end-color, 5%)));
+ background-image: -webkit-linear-gradient(top, lighten($nav-gradient-start-color, 5%) 0%, lighten($nav-gradient-end-color, 5%) 100%);
+ background-image: -moz-linear-gradient(top, lighten($nav-gradient-start-color, 5%) 0%, lighten($nav-gradient-end-color, 5%) 100%);
+ background-image: -o-linear-gradient(top, lighten($nav-gradient-start-color, 5%) 0%, lighten($nav-gradient-end-color, 5%) 100%);
+ background-image: linear-gradient(top, lighten($nav-gradient-start-color, 5%) 0%, lighten($nav-gradient-end-color, 5%) 100%);
+}
+/*-------------------------------------------------------------- 
+Input hover colors---this setting will make it so you can decide if you want to use the company colors or just plain colors for the hover. 
+Personally I like it setup like it with the grey, but you could use client's colors if you want. 
+-------------------------------------------------------------- */ 
+$input-hover-dark: $grey-darkest;
+$input-hover-light: $grey;

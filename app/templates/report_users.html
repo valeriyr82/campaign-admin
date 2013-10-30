@@ -1,0 +1,26 @@
+<div>
+    <a class="btn btn-primary creatreport" href="#reports/users">Create new report</a>
+    <a class="btn btn-danger delete">Delete</a>
+
+    <div id="id_reports_static">
+        <div id="id_charts_header">
+            <table style="width:100%;">
+                <tr style="height:30px;">
+                </tr>
+                <tr>
+                    <td><label>Total Users</label><span class="report_var" id="id_total_users">tba</span></td>
+                    <td><label>New Users</label><span class="report_var" id="id_new_users">tba</span></td>
+                    <td><label>Total Actives</label><span class="report_var" id="id_total_actives">tba</span></td>
+                    <td><label>Total Sessions</label><span class="report_var" id="id_total_sessions">tba</span></td>
+		    <td><label>Total Shares</label><span class="report_var" rel="tooltip" title="The number of sharing events via email and Facebook" id="id_total_shares">tba</span></td>
+		    <td><label>App Ratings</label><span class="report_var" style="font-size:0.9em;" rel="tooltip" title="Rate Prompts Dismissed/<br/>User Clicked 'Later'/<br/>User Click through to Appstore" id="id_rate_stats">tba</span></td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <svg id="pie1" class="mypiechart"></svg>
+            <svg id="pie2" class="mypiechart"></svg>
+            <svg id="pie3" class="mypiechart"></svg>
+        </div>
+    </div>
+</div>

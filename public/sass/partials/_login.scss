@@ -1,0 +1,129 @@
+/* -------------------------------------------------------------- 
+ -----------LOGIN PAGE---11/8/12------------------MG----------- 
+ --------------------------------------------------------------  */
+#logoDiv {
+	position: relative;
+	margin: 30% 0 0.938em;
+	width: 100%;
+	text-align: center;
+}
+#bigLogo {
+	width: 45%;
+}
+#login label, #login input {
+	float: left;
+}
+#login label {
+	margin-right: 0.625em;
+	margin-top: 1.313em;
+	margin-left: 0.625em;
+	font-weight: bold;
+	font-size: 0.8em;
+}
+#login input {
+	width: 70%;
+	padding: 1.250em 0.813em;
+	margin-bottom: 0;
+	-o-border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	background-color: transparent;
+	background-image: none;
+}
+#login input:hover, #login input:focus {
+ color: $grey-dark;
+	text-shadow: 0 0.063em white;
+}
+#login .inputOne {
+	-moz-border-radius: 0.313em 0.313em 0 0;
+	-webkit-border-radius: 0.313em 0.313em 0 0;
+	border-radius: 0.313em 0.313em 0 0;
+	border-bottom: 0.063em solid #e9e9e9;
+}
+#login .inputTwo {
+	border-top: 0.063em solid #b0bfc0;
+	-moz-border-radius: 0 0 0.313em 0.313em;
+	-webkit-border-radius: 0 0 0.313em 0.313em;
+	border-radius: 0 0 0.313em 0.313em;
+}
+#login .inputBg {
+	width: 100%;
+	background-color: #fff;
+	-webkit-box-shadow: 0 0.125em rgba(0,0,0,.15);
+	-moz-box-shadow: 0 0.125em rgba(0,0,0,.15);
+	box-shadow: 0 0.125em rgba(0,0,0,.15);
+	 background-image: -webkit-linear-gradient(bottom, rgba($input-hover-dark, .05), rgba($input-hover-light, .05) 74%);
+	 background-image: -moz-linear-gradient(bottom, rgba($input-hover-dark, .05), rgba($input-hover-light, .05) 74%);
+	 background-image: -o-linear-gradient(bottom, rgba($input-hover-dark, .05), rgba($input-hover-light, .05) 74%);
+	 background-image: -ms-linear-gradient(bottom, rgba($input-hover-dark, .05), rgba($input-hover-light, .05) 74%);
+	 background-image: linear-gradient(to top, rgba($input-hover-dark, .05), rgba($input-hover-light, .05) 74%);
+	position: relative;
+	z-index: 2;
+}
+#login .inputBg:hover {
+	 background-image: -webkit-linear-gradient(bottom, rgba($input-hover-dark, .3), rgba($input-hover-light, .05) 74%);
+	 background-image: -moz-linear-gradient(bottom, rgba($input-hover-dark, .3), rgba($input-hover-light, .05) 74%);
+	 background-image: -o-linear-gradient(bottom, rgba($input-hover-dark, .3), rgba($input-hover-light, .05) 74%);
+	 background-image: -ms-linear-gradient(bottom, rgba($input-hover-dark, .3), rgba($input-hover-light, .05) 74%);
+	 background-image: linear-gradient(to top, rgba($input-hover-dark, .3), rgba($input-hover-light, .05) 74%);
+}
+#login button {
+	display: block;
+	margin-bottom: 0;
+	width: 100%;
+	font-size: 1em;
+	text-shadow: 0 0.063em #2d565b;
+	padding: 1.250em 0.625em 1.250em;
+	-moz-border-radius: 0 0 0.313em 0.313em;
+	-webkit-border-radius: 0 0 0.313em 0.313em;
+	border-radius: 0 0 0.313em 0.313em;
+ background-color: $grey-dark;
+ color: $grey-light;
+	position: absolute;
+	height: 4.313em;
+ @include box-shadow-login-button;
+}
+#login .buttonBg {
+	position: relative;
+	z-index: 1;
+	height: 4.313em;
+}
+#login ol {
+	list-style: none;
+ border: 0.063em solid $grey-darkest;
+	-moz-border-radius: 0.313em;
+	-webkit-border-radius: 0.313em;
+	border-radius: 0.313em;
+	margin-bottom: 0.313em;
+}
+#forgotPassword {
+	float: right;
+	font-size: 0.8em;
+	margin-right: 0.3em;
+}
+.footNote {
+	font-style: normal;
+	font-size: 0.688em;
+	margin-top: 0.938em;
+	text-align: center;
+}
+#login .inputOne {
+	-moz-border-radius: 0.313em 0.313em 0 0;
+	-webkit-border-radius: 0.313em 0.313em 0 0;
+	border-radius: 0.313em 0.313em 0 0;
+	border-bottom: 0.063em solid #e9e9e9;
+}
+#login .inputTwo {
+	border-top: 0.063em solid #b0bfc0;
+	-moz-border-radius: 0 0 0.313em 0.313em;
+	-webkit-border-radius: 0 0 0.313em 0.313em;
+	border-radius: 0 0 0.313em 0.313em;
+}
+#login legend {
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}

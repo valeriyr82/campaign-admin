@@ -1,0 +1,123 @@
+<% if ( type == 'id_filter_geofence') {%>
+<button type="button" class="close">×</button>
+<h4>Geofence radius</h4>
+<div class="row-fluid">
+    <div class="span6">
+        <select>
+            <option value="500">500 meters</option>
+            <option value="1000">1 kilometer</option>
+            <option value="5000">5 kilometers</option>
+            <option value="10000">10 kilometers</option>
+            <option value="50000">50 kilometers</option>
+            <option value="100000">100 kilometers</option>
+        </select>
+        <label>
+            <input type="radio" class="radio" name="location-mode" checked="checked">
+            All Locations
+        </label>
+        <label>
+            <input type="radio" class="radio" name="location-mode">
+            Selected Locations
+        </label>
+    </div>
+    <div class="span6">
+        <select multiple="multiple" id="id_locations" name="locations">
+            <%
+            _.each( shops, function( shop ){
+            print('<option value="' + shop.suid +'">' + shop.title + '</option>');
+            });
+            %>
+        </select>
+    </div>
+</div>
+<% } else if ( type == 'id_filter_birthday') {%>
+<button type="button" class="close">×</button>
+<h4>Filter Birthday</h4>
+<label for="id_birthday">Birthday:</label>
+<div class="input-append date">
+    <input type="text" id="id_birthday" name="birthday" value="" />
+    <span class="add-on">
+        <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+    </span>
+</div>
+<% } else if ( type == 'id_filter_anniverssary') { %>
+<button type="button" class="close">×</button>
+<h4>Anniversary of....</h4>
+<div class="row-fluid">
+    <div class="span6">
+        <select id="id_anniversarylist" class="span12">
+	    <!-- We use some special codes for our values, they are defined http://api.streethawk.co/docs/public/mobile-codes.html here -->
+            <option value="8101">User Installed App</option>
+            <option value="8202">User last Logged-in to App</option>
+            <option value="2">User last Visited Website</option>
+            <option value="8103">App Last Opened</option>
+            <option value="8384">Last Purchase</option>
+            <option value="5">Joined the Loyalty Program</option>
+        </select>
+    </div>
+    <div class="span6">
+        <label for="id_installation_offset_days">
+            <input id="id_installation_offset_days" class="span3" type="number" value="14">
+            <span id="id_anniversary_selected_text">Days since User Installed App</span>
+        </label>
+    </div>
+</div>
+<% } else if ( type == 'id_filter_age') {%>
+<button type="button" class="close">×</button>
+<h4>User Age</h4>
+<label class="checkbox">
+    <input type="checkbox" id="id_min_age_chk">Min age is <span class="min_age_lbl">disabled</span>
+</label>
+<div class="row-fluid">
+    <input type="text" id="id_min_age_val" class="span12 hide" value="18" data-slider-min="18" data-slider-max="80" data-slider-step="1" data-slider-value="18" data-slider-orientation="horizontal" data-slider-selection="after"data-slider-tooltip="hide">
+</div>
+<label class="checkbox">
+    <input type="checkbox" id="id_max_age_chk">Max age is <span class="max_age_lbl">disabled</span>
+</label>
+<div class="row-fluid">
+    <input type="text" id="id_max_age_val" class="span12 hide" value="18" data-slider-min="18" data-slider-max="80" data-slider-step="1" data-slider-value="18" data-slider-orientation="horizontal" data-slider-selection="after"data-slider-tooltip="hide">
+</div>
+<% } else if ( type == 'id_filter_gender') {%>
+<button type="button" class="close">×</button>
+<h4>Target gender</h4>
+<select>
+    <option value="0">All App Users</option>
+    <option value="1">Women</option>
+    <option value="2">Men</option>
+    <option value="3">Unknown</option>
+</select>
+<% } else if ( type == 'id_filter_faved') {%>
+<button type="button" class="close">×</button>
+<h4>Filter Faved</h4>
+<% } else if ( type == 'id_filter_userlist') {%>
+<button type="button" class="close">×</button>
+<h4>User List</h4>
+<select id="id_userlist" name="userlist" class="span12">
+    <option value="">---------</option>
+    <%
+    _.each( users, function( user ){
+        print('<option value="' + user.suid +'">' + user.name + ' : ' + user.suid +'</option>');
+    });
+    %>
+</select>
+<% } else if ( type == 'id_filter_device') {%>
+<button type="button" class="close">×</button>
+<h4>Target Device/OS</h4>
+<select id="id_device" name="device">
+    <option value="0">All</option>
+    <option value="1">Android</option>
+    <option value="2">iPhone</option>
+    <option value="3">iPad</option>
+</select>
+<% } else if ( type == 'id_filter_version') {%>
+<button type="button" class="close">×</button>
+<h4>Filter Version</h4>
+<% } else if ( type == 'id_filter_custom') {%>
+<button type="button" class="close">×</button>
+<h4>Filter Custom</h4>
+<%
+   } else {
+%>
+<button type="button" class="close">×</button>
+Please add your filter by drag and drop.
+<% } %>

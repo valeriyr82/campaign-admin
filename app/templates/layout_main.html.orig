@@ -1,0 +1,85 @@
+<div id="top_menu" class="clearfix">
+    <div class="navbar">
+        <ul class="nav">
+            <li><a href="#"><i class="icon-home"></i></a></li>
+            <li><a href="#">PeepToeApp</a></li>
+            <li class="<% if (typeof active != 'undefined' && active == 'report') {print('active');}%>"><a href="#reports/summary">Reports</a></li>
+            <li class="<% if (typeof active != 'undefined' && active == 'campaign') {print('active');}%>"><a href="#campaigns">Campaigns</a></li>
+            <li class="<% if (typeof active != 'undefined' && active == 'geofence') {print('active');}%>"><a href="#geofence">Geofences / Locations</a></li>
+            <li class="<% if (typeof active != 'undefined' && active == 'userlist') {print('active');}%>"><a href="#userlist">Upload Userlists</a></li>
+            <li><a href="#">Custom Tags</a></li>
+        </ul>
+        <a class="btn btn-primary logout pull-right" href="#logout">Logout</a>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span3">
+<<<<<<< local
+        <div class="sidebar">
+=======
+        <div>
+            <h3>Campaigns</h3>
+            <div id="category">
+                <h2><a href="campaigns">Overview</a></h2>
+                <div>
+                    <ul>
+                        <li><a href="#campaigns?status=1">All Enabled</a></li>
+                        <li><a href="#campaigns">All</a></li>
+                        <li><a href="#campaigns?status=0">All Disabled</a></li>
+                    </ul>
+                </div>
+                <h2><a>Target segment</a></h2>
+                <div id="id_filtergroup">
+                    <ul>
+			<li id="id_filter_savedsegment">Saved Segment</li>
+                        <li id="id_filter_geofence">Geofence</li>
+                        <li id="id_filter_birthday">Birthday</li>
+                        <li id="id_filter_anniverssary">Anniversary</li>
+                        <li id="id_filter_age">User Age</li>
+                        <li id="id_filter_gender">User Gender</li>
+                        <li id="id_filter_faved">Users Who Faved</li>
+                        <li id="id_filter_userlist">Select A Userlist</li>
+                        <li id="id_filter_device">Device (Android / iPhone)</li>
+                        <li id="id_filter_version">App Version</li>
+                        <li id="id_filter_custom">Custom ...</li>
+                    </ul>
+                </div>
+                <h2><a>Outcome / Destination</a></h2>
+                <div>
+                    <ul>
+                        <li>Offer</li>
+                        <li>News</li>
+                        <li>Open App Home Page</li>
+                        <li>Launch Web Page InApp</li>
+                        <li>Launch Web Page in Browser</li>
+                        <li>Open Rating Page</li>
+                        <li>Login/Register Prompt</li>
+                        <li>Passbook Offer/Coupon</li>
+                        <li>Launch an App Page</li>
+                        <li>Raw JSON</li>
+                    </ul>
+                </div>
+                <h2><a>Notifications / Media</a></h2>
+                <div>
+                    <ul>
+                        <li>Push</li>
+                        <li>SMS</li>
+                        <li>Email</li>
+                        <li>Custom API call</li>
+                    </ul>
+                </div>
+                <h2><a href="campaigns/reviewsave" >Timing, Review & Save</a></h2>
+                <div>
+                </div>
+            </div>
+>>>>>>> other
+        </div>
+    </div>
+    <div class="span9">
+        <div class="content">
+        </div>
+    </div>
+</div>
+
+
+

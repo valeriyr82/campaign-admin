@@ -1,0 +1,43 @@
+<div id="splash"> 
+    <div id="logoDiv"><img <%= bindAttr src="Newstex.logoLarge" %> id="bigLogo"  /></div>
+</div>
+<div>
+  <div class="row" id="navbar">
+    <div class="col_2">
+        <a href="#" <%= action goHome %>><div class="logo" ><div class="clear"></div></div></a>
+    </div>
+    <div class="col_8" id="searchbar">
+         <form id="search" tabindex="1" {{action doSearch on="submit"}}>
+           <label for="search"></label>
+           <input type="text"
+                  tabindex="2" 
+                  autofocus="autofocus" 
+                  autocomplete="on" 
+                  required="required" 
+                  id="search-box" 
+                  x-webkit-speech="x-webkit-speech"
+                  {{action doSearch on="webkitspeechchange"}}
+                  {{bindAttr value="Newstex.searchController.content.q"}}
+          />
+         </form>
+    </div>
+    <div class="col_2 last">
+      <nav>
+          <ul id="nav">
+            <li>
+               <a>{{user.name}}</a>
+                <ul>
+                <li><a id="customize-button" href="#" {{action "goEditHome"}}>Customize Dashboard</a></li>
+                <li><a href="#/account">Settings</a></li>
+                <li><a href="#">Bookmarks</a></li>
+                    <li><a href="#/saved">Saved Searches</a></li>
+               </ul>
+            </li>
+          </ul>
+      </nav>
+    </div>
+  </div>
+</div><!-- end navbar container" -->
+<div class="container">
+  {{outlet}}
+</div><!-- end page container" -->

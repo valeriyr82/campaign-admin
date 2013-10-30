@@ -1,0 +1,22 @@
+/* common.scss */
+/* line 2, ../sass/common.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 7, ../sass/common.scss */
+#splash {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: url(../img/global/bg.jpg) repeat;
+  z-index: 9999;
+}
+
+/* line 16, ../sass/common.scss */
+a:hover {
+  text-decoration: none !important;
+}

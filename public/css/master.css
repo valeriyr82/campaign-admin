@@ -1,0 +1,117 @@
+#top_menu {
+    margin-bottom: 20px;
+}
+
+#id_filterbox {
+    position: relative;
+    min-height: 120px;
+}
+#id_filterbox .alert:first-child:before {
+    content: '';
+}
+#id_filterbox .alert:before {
+    position: absolute;
+    left: 50%;
+    top: -35px;
+    margin-left: -35px;
+    display: inline-block;
+    content: url(https://cdn2.iconfinder.com/data/icons/aquaticus/60%20X%2060/netvibes.png);
+}
+#id_filterbox .alert {
+    position: relative;
+}
+
+.m_bottom20 {
+    margin-bottom: 20px;
+}
+
+#category ul{
+    margin: 0;
+    list-style-type: none;
+}
+#category ul li{
+    cursor: pointer;
+    padding: 3px 0;
+}
+
+#id_filterbox.ui-state-default{
+    border: none;
+}
+#id_filterbox.ui-state-default .dragdropregion {
+    display: block;
+}
+#id_filterbox.ui-state-default .placeholder {
+    display: none;
+}
+
+#id_filterbox .dragdropregion {
+    display: none;
+    background-color: #d4d4d4;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    opacity: .8;
+}
+#id_filterbox .dragdropregion div{
+    left: 10%;
+    right: 10%;
+    position: absolute;
+    padding: 0 5%;
+    border: 4px darkgray dotted;
+    width: 70%;
+    top: 25%;
+    height: 40%;
+    margin: auto;
+}
+#id_filterbox .dragdropregion div h4{
+    position: absolute;
+    margin: 0;
+    top: 35%;
+}
+.ui-draggable-dragging {
+    z-index: 9999;
+}
+
+/********************************************************************/
+/***************** css for chart on report page *********************/
+/********************************************************************/
+
+#chart1{
+    height: 500px;
+}
+#barchart1 svg{
+    height: 250px;
+    min-width: 100px;
+    min-height: 100px;
+    /*
+      margin: 10px;
+      Minimum height and width is a good idea to prevent negative SVG dimensions...
+      For example width should be =< margin.left + margin.right + 1,
+      of course 1 pixel for the entire chart would not be very useful, BUT should not have errors
+    */
+}
+
+.mypiechart {
+    width: 250px;
+    border: 2px;
+    display:inline;
+}
+#id_charts_header {
+    box-shadow: 10px 10px 5px #888;
+    text-align:center;
+    margin-bottom: 15px;
+}
+
+#id_charts_header label {
+    color: lightgray;
+    font-size: 0.8em;
+}
+#id_charts_header div {
+    padding-top: 2em;
+}
+#id_charts_header .report_var {
+    font-size: 1.2em;
+    font-weight: bold;
+}

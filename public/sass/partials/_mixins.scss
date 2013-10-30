@@ -1,0 +1,17 @@
+@mixin input-textarea {
+	color: $grey-dark;
+	text-shadow: $body-text-shadow;
+	font-size: 0.813em;
+	border: 0;
+	padding: 0.438em 0.625em;
+	width: 97%;
+	margin-bottom: 0.625em;
+	@include border-radius(0.313em);
+	@include box-shadow(rgba(0,0,0,.29) 0 0.125em);
+	background-color: #dcdcdc;
+	background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.1), rgba(255,255,255,.1) 74%);
+	background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.1), rgba(255,255,255,.1) 74%);
+	background-image: -o-linear-gradient(bottom, rgba(0,0,0,.1), rgba(255,255,255,.1) 74%);
+	background-image: -ms-linear-gradient(bottom, rgba(0,0,0,.1), rgba(255,255,255,.1) 74%);
+	background-image: linear-gradient(to top, rgba(0,0,0,.1), rgba(255,255,255,.1) 74%);
+}

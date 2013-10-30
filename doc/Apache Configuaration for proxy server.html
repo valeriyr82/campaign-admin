@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <ul>
+        <li>
+            <h4>make sure the Apache curl module enable.</h4>
+            <p>If curl module is not enabled in the php, please install with following command.</p>
+            <p><code><b>sudo apt-get install php5-curl</b></code></p>
+
+            <p>you can confirm the curl module with this code in the *.php file</p>
+            <pre><code>
+                &lt;?php
+                   phpinfo();
+                ?&gt;
+            </code></pre>
+
+            <p>I've added info.php file in the project path.</p>
+
+            <p>http://[servername]/info.php</p>
+        </li>
+        <li>
+            <h4>change directory access permission.</h4>
+            <p>In the /opt/bitnami/apache2/conf/httpd.conf file uncomment the following line.</p>
+
+            <p><code><b>Include conf/extra/httpd-vhosts.conf</b></code></p>
+
+            <p>In the /opt/bitnami/apache2/conf/extra/httpd-vhosts.conf add the following codes.</p>
+            <pre><code>
+                &lt;VirtualHost *:80&gt;
+                    ServerName 54.252.212.90
+                    DocumentRoot "/opt/bitnami/apps/backbone-campaign-admin"           // set the document root to the project path
+                    &lt;Directory "/opt/bitnami/apps/backbone-campaign-admin"&gt;            // give access permission to the project path
+                        AllowOverride All
+                        Order allow,deny
+                        Allow from all
+                    &lt;/Directory&gt;
+                &lt;/VirtualHost&gt;
+            </code></pre>
+         </li>
+        <li>
+            <h4>restart server.</h4>
+            <p><code><b>sudo /[installdir]/ctlscript.sh restart apache</b></code></p>
+        </li>
+    </ul>
+</body>
+</html>

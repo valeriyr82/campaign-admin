@@ -1,0 +1,18 @@
+/* common.scss */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#splash {
+	position: fixed;
+	height: 100%;
+	width: 100%; top:0;
+	left: 0;
+	background: url(../img/global/bg.jpg) repeat;
+	z-index:9999;
+}
+
+a:hover{
+	text-decoration: none !important;
+}

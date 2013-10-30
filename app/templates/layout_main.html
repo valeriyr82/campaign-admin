@@ -1,0 +1,28 @@
+<div id="top_menu" class="clearfix">
+    <div class="navbar">
+        <ul class="nav">
+            <li><a href="#"><i class="icon-home"></i></a></li>
+            <li><a href="#">Sheridan App</a></li>
+            <li class="<% if (typeof active != 'undefined' && active == 'report') {print('active');}%>"><a href="#reports/summary">Reports</a></li>
+            <li class="<% if (typeof active != 'undefined' && active == 'campaign') {print('active');}%>"><a href="#campaigns">Campaigns</a></li>
+            <li class="<% if (typeof active != 'undefined' && active == 'geofence') {print('active');}%>"><a href="#geofence">Geofences</a></li>
+            <li class="<% if (typeof active != 'undefined' && active == 'userlist') {print('active');}%>"><a href="#userlist">Userlists</a></li>
+            <li><a href="#">Custom Tags</a></li>
+        </ul>
+        <a class="btn btn-primary logout pull-right" href="#logout">Logout</a>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span3">
+        <div class="sidebar">
+			<li id="id_filter_savedsegment">Saved Segment</li>
+        </div>
+    </div>
+    <div class="span9">
+        <div class="content">
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,55 @@
+/* -------------------------------------------------------------- 
+ -----------Messages---11/12/12------------------MG------------ 
+ -------------------------------------------------------------- */
+.message {
+	box-shadow: inset 0 -1px 0 rgba(255,255,255,.4);
+	width: 100%;
+	border-top: 0.125em solid;
+	color: white;
+	padding: 1.250em;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	_position: absolute;
+	text-shadow: 0 1px 0 rgba(0,0,0,.5);
+	animation: fadeIn .5s ease;
+	-webkit-animation:fadeIn .5s ease;
+	-moz-animation:fadeIn .5s ease;
+	-o-animation:fadeIn .5s ease;
+	-ms-animation:fadeIn .5s ease;
+	text-align: center;
+	font-size: 0.9em;
+}
+.alert-info {
+ background-color: $info-gray;
+ border-color: darken($info-gray, 10%);
+}
+.alert-error {
+ background-color: $error-red;
+ border-color: darken($error-red, 10%);
+}
+.alert-warning {
+ background-color: $warning-yellow;
+ border-color: darken($warning-yellow, 10%);
+}
+.alert-success {
+ background-color: $success-green;
+ border-color: darken($success-green, 10%);
+}
+ @keyframes fadeIn{
+ from {
+ opacity:0;
+}
+to {
+	opacity: 1;
+}
+}
+
+@-webkit-keyframes fadeIn{
+ from {
+ opacity:0;
+}
+to {
+	opacity: 1;
+}
+}
